@@ -38,12 +38,10 @@ app.use("/sales", salesRoutes)
 
 const PORT = process.env.PORT || 9000;
 mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
 }).then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
 
     /* ONLY ADD DATA ONE TIME */
-    User.insertMany(dataUser)
+    // User.insertMany(dataUser)
 
 }).catch((error) => console.log(`${error} did not connect`))
